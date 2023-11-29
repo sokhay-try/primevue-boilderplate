@@ -23,18 +23,13 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
 
-```sh
-npm install
+``` bash
+docker compose up
 ```
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
+``` bash
+docker cp <container-id or container-name>:/app/node_modules .
 ```
 
-### Type-Check, Compile and Minify for Production
+### Go to browser and type http://localhost:5173/
 
-```sh
-npm run build
-```
