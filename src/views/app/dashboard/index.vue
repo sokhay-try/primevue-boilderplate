@@ -1,3 +1,5 @@
 <template>
-  <h1>This is dashboard index.vue file</h1>
+  <h1>index of dashboard</h1>
 </template>
+
+<script></script>
