@@ -1,0 +1,106 @@
+.tree-level {
+  flex: 1;
+}
+.node-checkbox {
+  display: none;
+}
+.icon-wrapper {
+  padding: 0;
+  min-width: 0;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  width: 24px;
+}
+.node-wrapper:focus {
+  border: 0;
+  background-color: #e0e0e0;
+}
+.input-wrapper {
+  margin-left: 0.7em;
+}
+.icon-wrapper svg {
+  height: 10px;
+  width: 10px;
+}
+.node-wrapper {
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  word-wrap: break-word;
+  font-weight: 400;
+  font-size: 14px;
+}
+.checkbox-wrapper {
+  width: 1.25em;
+  height: 1.25em;
+}
+.checkbox-wrapper {
+  position: relative;
+  margin-left: 0.3em;
+  overflow: hidden;
+}
+.checkbox-wrapper {
+  background: #fff;
+  border: 2px solid rgba(0, 0, 0, 0.54);
+  border-radius: 0.125em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.checkbox-wrapper.checked,
+.checkbox-wrapper.indeterminate {
+  background: #e1232e;
+  border: 2px solid #e1232e;
+}
+.node-wrapper.disabled .checkbox-wrapper.checked {
+  background: rgba(0, 0, 0, 0.26);
+}
+.node-wrapper.disabled .checkbox-wrapper.indeterminate {
+  background: rgba(0, 0, 0, 0.26);
+}
+.node-wrapper.disabled .checkbox-wrapper {
+  border-color: #00000042;
+}
+.checkbox-wrapper.checked:after {
+  transform: translate(0.25em, 0.3365384615em) rotate(-45deg);
+  width: 0.7em;
+  height: 0.3em;
+  border: 0.125em solid #fff;
+  border-top-style: none;
+  border-right-style: none;
+}
+.checkbox-wrapper.indeterminate:after {
+  transform: translate(0.25em, 0.3365384615em) rotate(0);
+  width: 0.7em;
+  height: 0.3em;
+  border: 0.125em solid #fff;
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+}
+.checkbox-wrapper:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.node-over {
+  border-top: solid 2px #e1232e;
+}
+.node-in {
+  background-color: #bdbdbd;
+}
+.node-under {
+  border-bottom: solid 2px #e1232e;
+}
+.input-wrapper {
+  font-size: 14px;
+  position: relative;
+  color: #000;
+  display: flex;
+  align-items: center;
+}

@@ -1,18 +1,18 @@
 export const RouteName = {
   AUTH: {
-    LOGIN: "auth.login",
-    LOGOUT: "auth.logout",
-    CHANGE_PASSWORD: "auth.change-password",
+    LOGIN: 'auth.login',
+    REDIRECT: 'auth.redirect',
+    LOGOUT: 'auth.logout'
   },
   DASHBOARD: {
-    INDEX: "dashboard",
-    CONTACT: "app.dashboard.contact",
-    ABOUT: "app.dashboard.about",
+    INDEX: 'dashboard'
   },
-  SETTING: {
-    USER_PROFILE: "app.setting.user-profile",
-  },
-  HOME: {
-    INDEX: "home-page",
-  },
-};
+  SYSTEM_SETTING: {
+    EXAMPLE_1: {
+      INDEX: 'system-setting.example-1'
+    },
+    EXAMPLE_2: {
+      INDEX: 'system-setting.example-2'
+    }
+  }
+}
