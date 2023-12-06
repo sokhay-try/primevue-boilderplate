@@ -1,5 +1,4 @@
 import type { RouteMeta, RouteRecordRaw } from 'vue-router'
-import { RouteName } from '@/constants'
 
 export interface NavigationItem {
   name: string | null | undefined | symbol
