@@ -18,6 +18,9 @@ export const ApplicationRoutes: Array<RouteRecordRaw> = [
     redirect: {
       name: RouteName.DASHBOARD.INDEX
     },
+    meta: {
+      requiresAuth: true
+    },
     children: [...DashboardRoutes, ...SystemSettingRoutes] as RouteRecordRaw[]
   }
 ]

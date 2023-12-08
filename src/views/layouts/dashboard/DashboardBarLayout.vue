@@ -86,11 +86,8 @@ export default defineComponent({
   },
   methods: {
     async onLogoutHandle() {
-      const res = await services.AuthService.logout()
-      console.log('>>>reslogout::', res)
-      if (res.data) {
-        services.AuthService.removeToken()
-      }
+      services.AuthService.removeToken()
+      await services.AuthService.logout()
     }
   }
 })

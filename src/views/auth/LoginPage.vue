@@ -54,6 +54,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { services } from '@/services'
+import { RouteName } from '@/constants'
 
 export default defineComponent({
   name: 'LoginPage',
@@ -74,6 +75,7 @@ export default defineComponent({
       const res = await services.AuthService.onLogin(this.form)
       if (res.data) {
         services.AuthService.saveToken(res?.data?.token)
+        this.$router.push({ name: RouteName.DASHBOARD.INDEX })
       }
     }
   }
