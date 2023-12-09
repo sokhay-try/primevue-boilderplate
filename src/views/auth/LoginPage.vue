@@ -53,7 +53,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { services } from '@/services'
 import { RouteName } from '@/constants'
 
 export default defineComponent({
@@ -72,9 +71,10 @@ export default defineComponent({
       await this.onLogin()
     },
     async onLogin() {
-      const res = await services.AuthService.onLogin(this.form)
-      if (res.data) {
-        services.AuthService.saveToken(res?.data?.token)
+      const res = await this.$service.auth.login(this.form)
+      console.log('>>>res;::', res)
+      if (res) {
+        this.$service.auth.saveToken(res.data.token)
         this.$router.push({ name: RouteName.DASHBOARD.INDEX })
       }
     }

@@ -1,24 +1,30 @@
-import BaseHttpService from '../base-http.service'
-
+import { apiRequestBuilder } from '@/utils'
 interface ICredential {
   username: string
   password: string
 }
-class AuthService extends BaseHttpService {
-  async onLogin(credential: ICredential) {
-    const response = await this.login(credential)
-    if (response?.data) {
-      return response.data
-    }
-  }
+export const AuthService = {
+  login: async (credential: ICredential) => {
+    const call = apiRequestBuilder.setUrl('/api/v1/user-management/users/login')
+    const { data } = await call.create({ data: credential })
+    return data
+  },
 
-  async logout() {
-    const endpoint = `api/v1/user-management/users/logout`
-    const response = await this.post(endpoint)
-    if (response?.data) {
-      return response.data
-    }
+  logout: async () => {
+    const call = apiRequestBuilder.setUrl('api/v1/user-management/users/logout')
+    const { data } = await call.create()
+    return data
+  },
+
+  saveToken(token: string) {
+    return localStorage.setItem('accessToken', token)
+  },
+
+  removeToken() {
+    localStorage.removeItem('accessToken')
+  },
+
+  getToken() {
+    return localStorage.getItem('accessToken')
   }
 }
-
-export default new AuthService()

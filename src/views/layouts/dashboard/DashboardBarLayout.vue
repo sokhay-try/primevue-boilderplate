@@ -50,9 +50,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { IconEnum } from '@/constants'
+import { IconEnum, RouteName } from '@/constants'
 import NavigationLogo from '@/assets/logo.svg'
-import { services } from '@/services'
 
 export default defineComponent({
   name: 'DashboardBarLayout',
@@ -86,8 +85,9 @@ export default defineComponent({
   },
   methods: {
     async onLogoutHandle() {
-      services.AuthService.removeToken()
-      await services.AuthService.logout()
+      await this.$service.auth.logout()
+      this.$service.auth.removeToken()
+      this.$router.push({ name: RouteName.AUTH.LOGIN })
     }
   }
 })

@@ -6,11 +6,13 @@ import App from './App.vue'
 import router from './router'
 import vuetifyPlugin from './plugins/Vuetify'
 import { i18n } from './plugins/VueI18n'
+import { global } from './global'
 
 const app = createApp(App)
 
 app.use(router)
 app.use(i18n)
+app.use(global)
 app.use(vuetifyPlugin)
 
 app.mount('#app')

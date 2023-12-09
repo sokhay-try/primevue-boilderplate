@@ -1,5 +1,14 @@
-import AuthService from './auth'
+import type { Plugin } from 'vue'
+import { AuthService } from './auth'
 
-export const services = {
-  AuthService
+export type Service = {
+  auth: typeof AuthService
+}
+
+export const services: Plugin = {
+  install(app) {
+    app.config.globalProperties.$service = {
+      auth: AuthService
+    }
+  }
 }

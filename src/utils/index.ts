@@ -4,4 +4,11 @@ import {
   clearAccessTokenCookie
 } from './tokenUtil'
 
-export { setEncryptedTokenCookie, getDecryptedTokenFromCookie, clearAccessTokenCookie }
+import { apiRequestBuilder } from './apiRequestBuilder'
+
+export {
+  setEncryptedTokenCookie,
+  getDecryptedTokenFromCookie,
+  clearAccessTokenCookie,
+  apiRequestBuilder
+}

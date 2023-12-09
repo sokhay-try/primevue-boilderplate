@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { loadRoutes } from './loadRoutes'
-import { services } from '@/services'
 import { RouteName } from '@/constants'
+import { AuthService } from '@/services/auth'
 
 const { routes } = loadRoutes()
 
@@ -15,7 +15,7 @@ router.beforeEach((to, from, next) => {
     // this route requires auth, check if logged in
     // if not, redirect to login page.
 
-    const token = services.AuthService.loadToken() // use for test
+    const token = AuthService.getToken() // use for test
 
     if (!token) {
       next({ name: RouteName.AUTH.LOGIN })
